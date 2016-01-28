@@ -17,8 +17,10 @@ xml.rss :version => "2.0" do
           xml.title ""
         end
         xml.pubDate post.doc_date.to_s(:rfc822)
-        xml.link "https://web.spaggiari.eu/sdg/app/default/view_documento.php?a=akVIEW_FROM_ID&id_documento=#{post.doc_id}&sede_codice=FIIT0009"
+        link="https://web.spaggiari.eu/sdg/app/default/view_documento.php?a=akVIEW_FROM_ID&id_documento=#{post.doc_id}&sede_codice=FIIT0009"
+        xml.link link
         xml.guid post.id
+        xml.description "<p><a href='"+link+"'><b>Scarica il documento</b></a></p>".html_safe
       end
     end
   end
